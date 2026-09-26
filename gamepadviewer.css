@@ -13,12 +13,18 @@
 html,
 body {
   background: transparent !important;
-  overflow: hidden;
+  /* The trigger silhouettes extend above the standard controller box. */
+  overflow: visible !important;
+}
+
+#gamepads {
+  overflow: visible !important;
 }
 
 .controller.custom {
   width: 817px;
   height: 578px;
+  overflow: visible !important;
   background: transparent url("./assets/controller-base-structure.png?v=4") center / 817px 578px no-repeat;
   filter: drop-shadow(0 16px 18px rgba(0, 38, 83, 0.24));
 }
