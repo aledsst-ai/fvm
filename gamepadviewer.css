@@ -50,7 +50,7 @@ body {
   width: 89px;
   height: 145px;
   opacity: 0;
-  background: transparent url("./assets/trigger.svg?v=9") center / 89px 145px no-repeat;
+  background: transparent url("./assets/trigger.svg?v=10") center / 89px 145px no-repeat;
 }
 
 .custom .trigger.left {
