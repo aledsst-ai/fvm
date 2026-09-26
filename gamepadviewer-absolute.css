@@ -1,6 +1,6 @@
 /*
  * Webpixum / XISDE Xbox skin for Gamepad Viewer
- * Canvas: 817 x 578 px
+ * Canvas: 817 x 711 px (578 px body + 133 px upper shoulder area)
  * Keep this file beside the assets/ directory when publishing.
  */
 
@@ -23,9 +23,9 @@ body {
 
 .controller.custom {
   width: 817px;
-  height: 578px;
+  height: 711px;
   overflow: visible !important;
-  background: transparent url("https://aledsst-ai.github.io/fvm/assets/controller-base-structure.png?v=4") center / 817px 578px no-repeat;
+  background: transparent url("https://aledsst-ai.github.io/fvm/assets/controller-base-structure.png?v=4") center bottom / 817px 578px no-repeat;
   filter: drop-shadow(0 16px 18px rgba(0, 38, 83, 0.24));
 }
 
@@ -45,8 +45,8 @@ body {
 .custom .triggers {
   position: absolute;
   z-index: 12;
-  /* The Webpixum body starts below the shoulder silhouette. */
-  top: -133px;
+  /* Reserve the upper shoulder area inside the custom skin canvas. */
+  top: 0;
   left: 132px;
   width: 558px;
   height: 145px;
@@ -72,7 +72,7 @@ body {
 .custom .bumpers {
   position: absolute;
   z-index: 11;
-  top: 0;
+  top: 133px;
   left: 132px;
   width: 558px;
   height: 63px;
@@ -114,7 +114,7 @@ body {
 .custom .quadrant {
   position: absolute;
   z-index: 12;
-  top: 37px;
+  top: 170px;
   left: 378px;
   width: 66px;
   height: 62px;
@@ -134,7 +134,7 @@ body {
 .custom .arrows {
   position: absolute;
   z-index: 20;
-  top: 126px;
+  top: 259px;
   left: 330px;
   width: 160px;
   height: 46px;
@@ -181,7 +181,8 @@ body {
 .custom .abxy {
   position: absolute;
   z-index: 20;
-  inset: 0;
+  top: 133px;
+  left: 0;
   width: 817px;
   height: 578px;
 }
@@ -224,7 +225,7 @@ body {
 .custom .sticks {
   position: absolute;
   z-index: 18;
-  top: 80px;
+  top: 213px;
   left: 138px;
   width: 434px;
   height: 236px;
@@ -259,7 +260,7 @@ body {
 .custom .dpad {
   position: absolute;
   z-index: 20;
-  top: 218px;
+  top: 351px;
   left: 233px;
   width: 130px;
   height: 129px;
@@ -317,4 +318,24 @@ body {
 .custom .fstick,
 .custom .trigger-button {
   display: none;
+}
+
+/* If the host embeds the viewer in the old short viewport, scale the
+ * complete 711px canvas instead of clipping its upper shoulder area. */
+@media (max-height: 710px) {
+  .controller.custom {
+    transform: translate(-50%, -50%) scale(0.8) !important;
+  }
+}
+
+@media (max-height: 550px) {
+  .controller.custom {
+    transform: translate(-50%, -50%) scale(0.7) !important;
+  }
+}
+
+@media (max-height: 480px) {
+  .controller.custom {
+    transform: translate(-50%, -50%) scale(0.6) !important;
+  }
 }
