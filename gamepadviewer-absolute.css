@@ -19,12 +19,12 @@ body {
 .controller.custom {
   width: 817px;
   height: 578px;
-  background: transparent url("https://aledsst-ai.github.io/fvm/assets/controller-base-structure.png?v=3") center / 817px 578px no-repeat;
+  background: transparent url("https://aledsst-ai.github.io/fvm/assets/controller-base-structure.png?v=4") center / 817px 578px no-repeat;
   filter: drop-shadow(0 16px 18px rgba(0, 38, 83, 0.24));
 }
 
 .custom.disconnected {
-  background-image: url("https://aledsst-ai.github.io/fvm/assets/controller-body-disconnected.png?v=3");
+  background-image: url("https://aledsst-ai.github.io/fvm/assets/controller-body-disconnected.png?v=4");
 }
 
 .custom.disconnected div {
@@ -43,7 +43,7 @@ body {
   left: 132px;
   width: 558px;
   height: 64px;
-  background: url("https://aledsst-ai.github.io/fvm/assets/triggers-static.png?v=3") center / 558px 64px no-repeat;
+  background: url("https://aledsst-ai.github.io/fvm/assets/triggers-static.png?v=4") center / 558px 64px no-repeat;
 }
 
 .custom .trigger {
@@ -226,7 +226,7 @@ body {
   height: 102px;
   border-radius: 50%;
   opacity: 1;
-  background: transparent url("https://aledsst-ai.github.io/fvm/assets/stick.png?v=3") center / 102px 102px no-repeat;
+  background: transparent url("https://aledsst-ai.github.io/fvm/assets/stick.png?v=4") center / 102px 102px no-repeat;
   filter: drop-shadow(0 0 7px rgba(0, 174, 243, 0.48));
 }
 
