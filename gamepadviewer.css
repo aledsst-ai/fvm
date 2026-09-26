@@ -1,0 +1,306 @@
+/*
+ * Webpixum / XISDE Xbox skin for Gamepad Viewer
+ * Canvas: 817 x 578 px
+ * Keep this file beside the assets/ directory when publishing.
+ */
+
+:root {
+  --webpixum-blue: #00aef3;
+  --webpixum-blue-deep: #007aca;
+  --webpixum-white: #ffffff;
+}
+
+html,
+body {
+  background: transparent !important;
+  overflow: hidden;
+}
+
+.controller.custom {
+  position: relative;
+  width: 817px;
+  height: 578px;
+  background: transparent url("./assets/controller-base.png?v=2") center / 817px 578px no-repeat;
+  filter: drop-shadow(0 16px 18px rgba(0, 38, 83, 0.24));
+}
+
+.custom.disconnected {
+  background-image: url("./assets/controller-disconnected.png?v=2");
+}
+
+.custom.disconnected div {
+  display: none;
+}
+
+.custom div {
+  box-sizing: border-box;
+}
+
+/* Analog triggers. Their opacity is driven by Gamepad Viewer. */
+.custom .triggers {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 132px;
+  width: 558px;
+  height: 64px;
+}
+
+.custom .trigger {
+  width: 214px;
+  height: 62px;
+  opacity: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(0, 174, 243, 0.88) 38%, rgba(0, 88, 185, 0.72));
+  box-shadow: 0 0 24px rgba(0, 174, 243, 0.75);
+}
+
+.custom .trigger.left {
+  float: left;
+  clip-path: polygon(8% 76%, 17% 36%, 47% 8%, 100% 0, 100% 24%, 50% 32%, 22% 58%);
+}
+
+.custom .trigger.right {
+  float: right;
+  clip-path: polygon(0 0, 53% 8%, 83% 36%, 92% 76%, 78% 58%, 50% 32%, 0 24%);
+}
+
+/* LB / RB */
+.custom .bumpers {
+  position: absolute;
+  z-index: 11;
+  top: 4px;
+  left: 132px;
+  width: 558px;
+  height: 58px;
+}
+
+.custom .bumper {
+  width: 214px;
+  height: 54px;
+  opacity: 0;
+  border: 3px solid rgba(255, 255, 255, 0.92);
+  background: rgba(0, 174, 243, 0.28);
+  box-shadow: 0 0 26px var(--webpixum-blue), inset 0 0 18px rgba(255, 255, 255, 0.72);
+  transition: opacity 70ms linear;
+}
+
+.custom .bumper.left {
+  float: left;
+  border-radius: 100% 34% 20% 70%;
+  clip-path: polygon(4% 77%, 14% 38%, 44% 7%, 100% 0, 100% 31%, 50% 35%, 20% 65%);
+}
+
+.custom .bumper.right {
+  float: right;
+  border-radius: 34% 100% 70% 20%;
+  clip-path: polygon(0 0, 56% 7%, 86% 38%, 96% 77%, 80% 65%, 50% 35%, 0 31%);
+}
+
+.custom .bumper.pressed {
+  opacity: 1;
+}
+
+/* Xbox/player indicator */
+.custom .quadrant {
+  position: absolute;
+  z-index: 12;
+  top: 37px;
+  left: 378px;
+  width: 66px;
+  height: 62px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: none;
+}
+
+.custom .quadrant.p0,
+.custom .quadrant.p1,
+.custom .quadrant.p2,
+.custom .quadrant.p3 {
+  box-shadow: 0 0 13px rgba(255, 255, 255, 0.28), 0 0 24px rgba(0, 174, 243, 0.28);
+}
+
+/* View / Menu */
+.custom .arrows {
+  position: absolute;
+  z-index: 20;
+  top: 126px;
+  left: 330px;
+  width: 160px;
+  height: 46px;
+}
+
+.custom .back,
+.custom .start {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.custom .back {
+  float: left;
+}
+
+.custom .start {
+  float: right;
+}
+
+.custom .back::after,
+.custom .start::after,
+.custom .button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 0 10px var(--webpixum-white), 0 0 24px var(--webpixum-blue), inset 0 0 12px rgba(255, 255, 255, 0.75);
+  transition: opacity 55ms linear, transform 55ms linear;
+}
+
+.custom .back.pressed::after,
+.custom .start.pressed::after,
+.custom .button.pressed::after {
+  opacity: 1;
+  transform: translateY(3px) scale(0.96);
+}
+
+/* ABXY. Container fills the skin so coordinates stay easy to maintain. */
+.custom .abxy {
+  position: absolute;
+  z-index: 20;
+  inset: 0;
+  width: 817px;
+  height: 578px;
+}
+
+.custom .button {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.custom .button.a {
+  top: 174px;
+  left: 596px;
+}
+
+.custom .button.b {
+  top: 126px;
+  left: 653px;
+  width: 58px;
+  height: 58px;
+}
+
+.custom .button.x {
+  top: 120px;
+  left: 541px;
+}
+
+.custom .button.y {
+  top: 65px;
+  left: 596px;
+}
+
+/* Analog sticks. Gamepad Viewer adds inline movement to these nodes. */
+.custom .sticks {
+  position: absolute;
+  z-index: 18;
+  inset: 0;
+  width: 817px;
+  height: 578px;
+}
+
+.custom .stick {
+  position: absolute;
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  opacity: 0.42;
+  background: radial-gradient(circle, transparent 0 51%, rgba(255, 255, 255, 0.76) 53%, rgba(0, 174, 243, 0.82) 58%, transparent 70%);
+  filter: drop-shadow(0 0 8px rgba(0, 174, 243, 0.62));
+}
+
+.custom .stick.left {
+  top: 80px;
+  left: 138px;
+}
+
+.custom .stick.right {
+  top: 214px;
+  left: 470px;
+}
+
+.custom .stick.pressed {
+  opacity: 1;
+  background: radial-gradient(circle, rgba(0, 174, 243, 0.24) 0 49%, rgba(255, 255, 255, 0.94) 52%, var(--webpixum-blue) 60%, transparent 72%);
+  filter: drop-shadow(0 0 16px var(--webpixum-blue));
+}
+
+/* D-pad */
+.custom .dpad {
+  position: absolute;
+  z-index: 20;
+  top: 218px;
+  left: 233px;
+  width: 130px;
+  height: 129px;
+}
+
+.custom .face {
+  position: absolute;
+  background: transparent;
+  border-radius: 14px;
+  opacity: 0;
+  box-shadow: 0 0 10px var(--webpixum-white), 0 0 22px var(--webpixum-blue), inset 0 0 15px rgba(255, 255, 255, 0.72);
+  transition: opacity 55ms linear, transform 55ms linear;
+}
+
+.custom .face.up,
+.custom .face.down {
+  left: 43px;
+  width: 44px;
+  height: 66px;
+}
+
+.custom .face.left,
+.custom .face.right {
+  top: 42px;
+  width: 66px;
+  height: 44px;
+}
+
+.custom .face.up {
+  top: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(0, 174, 243, 0.42));
+}
+
+.custom .face.down {
+  bottom: 0;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.76), rgba(0, 174, 243, 0.42));
+}
+
+.custom .face.left {
+  left: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.76), rgba(0, 174, 243, 0.42));
+}
+
+.custom .face.right {
+  right: 0;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0.76), rgba(0, 174, 243, 0.42));
+}
+
+.custom .face.pressed {
+  opacity: 1;
+  transform: scale(0.94);
+}
+
+/* Unused fight-stick and digital-trigger helpers. */
+.custom .fstick,
+.custom .trigger-button {
+  display: none;
+}

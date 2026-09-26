@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prévia — Webpixum Gamepad Viewer</title>
+  <link rel="stylesheet" href="./gamepadviewer.css">
+  <style>
+    html, body { min-height: 100%; overflow: auto; }
+    body { margin: 0; display: grid; place-items: center; background: #087bb7 !important; font-family: system-ui, sans-serif; color: white; }
+    main { display: grid; justify-items: center; gap: 14px; padding: 24px; }
+    p { margin: 0; padding: 8px 14px; border-radius: 999px; background: rgba(0, 28, 69, .72); }
+    .controller.custom { margin: 0; }
+    .controller.custom [data-control] { cursor: pointer; }
+  </style>
+</head>
+<body>
+  <main>
+    <p>Clique nos botões e no direcional para simular o estado pressionado.</p>
+    <div class="controller custom">
+      <div class="triggers">
+        <div class="trigger left" data-control></div>
+        <div class="trigger right" data-control></div>
+      </div>
+      <div class="bumpers">
+        <div class="bumper left" data-control></div>
+        <div class="bumper right" data-control></div>
+      </div>
+      <div class="quadrant p0"></div>
+      <div class="arrows">
+        <div class="back" data-control></div>
+        <div class="start" data-control></div>
+      </div>
+      <div class="abxy">
+        <div class="button a" data-control></div>
+        <div class="button b" data-control></div>
+        <div class="button x" data-control></div>
+        <div class="button y" data-control></div>
+      </div>
+      <div class="sticks">
+        <div class="stick left" data-control></div>
+        <div class="stick right" data-control></div>
+      </div>
+      <div class="dpad">
+        <div class="face up" data-control></div>
+        <div class="face down" data-control></div>
+        <div class="face left" data-control></div>
+        <div class="face right" data-control></div>
+      </div>
+    </div>
+  </main>
+  <script>
+    document.querySelectorAll('[data-control]').forEach((control) => {
+      control.addEventListener('click', () => {
+        control.classList.toggle('pressed');
+        if (control.classList.contains('trigger')) {
+          control.style.opacity = control.classList.contains('pressed') ? '1' : '0';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
