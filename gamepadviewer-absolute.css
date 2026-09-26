@@ -46,7 +46,7 @@ body {
   position: absolute;
   z-index: 10;
   /* LT/RT sit just below the higher LB/RB shoulder buttons. */
-  top: 18px;
+  top: 30px;
   left: 90px;
   width: 637px;
   height: 90px;
