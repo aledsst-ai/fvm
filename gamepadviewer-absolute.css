@@ -1,6 +1,6 @@
 /*
  * Webpixum / XISDE Xbox skin for Gamepad Viewer
- * Canvas: 817 x 711 px (578 px body + 133 px upper shoulder area)
+ * Canvas: 817 x 578 px (standard Gamepad Viewer canvas)
  * Keep this file beside the assets/ directory when publishing.
  */
 
@@ -13,7 +13,7 @@
 html,
 body {
   background: transparent !important;
-  /* The trigger silhouettes extend above the standard controller box. */
+  /* Keep the skin compatible with fixed-size OBS browser sources. */
   overflow: visible !important;
 }
 
@@ -23,9 +23,9 @@ body {
 
 .controller.custom {
   width: 817px;
-  height: 711px;
+  height: 578px;
   overflow: visible !important;
-  background: transparent url("https://aledsst-ai.github.io/fvm/assets/controller-base-structure.png?v=4") center bottom / 817px 578px no-repeat;
+  background: transparent url("https://aledsst-ai.github.io/fvm/assets/controller-base-structure.png?v=4") center / 817px 578px no-repeat;
   filter: drop-shadow(0 16px 18px rgba(0, 38, 83, 0.24));
 }
 
@@ -45,18 +45,18 @@ body {
 .custom .triggers {
   position: absolute;
   z-index: 12;
-  /* Reserve the upper shoulder area inside the custom skin canvas. */
+  /* Both LT/RT silhouettes stay inside the standard canvas. */
   top: 0;
-  left: 132px;
-  width: 558px;
-  height: 145px;
+  left: 90px;
+  width: 637px;
+  height: 110px;
 }
 
 .custom .trigger {
-  width: 89px;
-  height: 145px;
+  width: 171px;
+  height: 110px;
   opacity: 0;
-  background: transparent url("https://aledsst-ai.github.io/fvm/assets/trigger.svg?v=10") center / 89px 145px no-repeat;
+  background: transparent url("https://aledsst-ai.github.io/fvm/assets/trigger.svg?v=11") center / 171px 110px no-repeat;
 }
 
 .custom .trigger.left {
@@ -72,7 +72,7 @@ body {
 .custom .bumpers {
   position: absolute;
   z-index: 11;
-  top: 133px;
+  top: 0;
   left: 132px;
   width: 558px;
   height: 63px;
@@ -114,7 +114,7 @@ body {
 .custom .quadrant {
   position: absolute;
   z-index: 12;
-  top: 170px;
+  top: 37px;
   left: 378px;
   width: 66px;
   height: 62px;
@@ -134,7 +134,7 @@ body {
 .custom .arrows {
   position: absolute;
   z-index: 20;
-  top: 259px;
+  top: 126px;
   left: 330px;
   width: 160px;
   height: 46px;
@@ -181,7 +181,7 @@ body {
 .custom .abxy {
   position: absolute;
   z-index: 20;
-  top: 133px;
+  top: 0;
   left: 0;
   width: 817px;
   height: 578px;
@@ -225,7 +225,7 @@ body {
 .custom .sticks {
   position: absolute;
   z-index: 18;
-  top: 213px;
+  top: 80px;
   left: 138px;
   width: 434px;
   height: 236px;
@@ -260,7 +260,7 @@ body {
 .custom .dpad {
   position: absolute;
   z-index: 20;
-  top: 351px;
+  top: 218px;
   left: 233px;
   width: 130px;
   height: 129px;
@@ -318,24 +318,4 @@ body {
 .custom .fstick,
 .custom .trigger-button {
   display: none;
-}
-
-/* If the host embeds the viewer in the old short viewport, scale the
- * complete 711px canvas instead of clipping its upper shoulder area. */
-@media (max-height: 710px) {
-  .controller.custom {
-    transform: translate(-40%, -40%) scale(0.8) !important;
-  }
-}
-
-@media (max-height: 550px) {
-  .controller.custom {
-    transform: translate(-35%, -35%) scale(0.7) !important;
-  }
-}
-
-@media (max-height: 480px) {
-  .controller.custom {
-    transform: translate(-30%, -30%) scale(0.6) !important;
-  }
 }
