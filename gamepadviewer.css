@@ -42,61 +42,64 @@ body {
   top: 0;
   left: 132px;
   width: 558px;
-  height: 64px;
-  background: url("./assets/triggers-static.png?v=4") center / 558px 64px no-repeat;
+  height: 122px;
 }
 
 .custom .trigger {
-  width: 214px;
-  height: 62px;
+  width: 89px;
+  height: 122px;
   opacity: 0;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(0, 174, 243, 0.88) 38%, rgba(0, 88, 185, 0.72));
-  box-shadow: 0 0 24px rgba(0, 174, 243, 0.75);
+  background: transparent url("./assets/trigger.svg?v=1") center / 89px 122px no-repeat;
 }
 
 .custom .trigger.left {
   float: left;
-  clip-path: polygon(8% 76%, 17% 36%, 47% 8%, 100% 0, 100% 24%, 50% 32%, 22% 58%);
 }
 
 .custom .trigger.right {
   float: right;
-  clip-path: polygon(0 0, 53% 8%, 83% 36%, 92% 76%, 78% 58%, 50% 32%, 0 24%);
+  transform: rotateY(180deg);
 }
 
 /* LB / RB */
 .custom .bumpers {
   position: absolute;
   z-index: 11;
-  top: 4px;
+  top: 47px;
   left: 132px;
   width: 558px;
-  height: 58px;
+  height: 63px;
 }
 
 .custom .bumper {
-  width: 214px;
-  height: 54px;
+  width: 171px;
+  height: 63px;
   opacity: 0;
-  border: 3px solid rgba(255, 255, 255, 0.92);
-  background: rgba(0, 174, 243, 0.28);
-  box-shadow: 0 0 26px var(--webpixum-blue), inset 0 0 18px rgba(255, 255, 255, 0.72);
-  transition: opacity 70ms linear;
+  background: transparent url("./assets/bumper.svg?v=1") center / 171px 63px no-repeat;
 }
 
 .custom .bumper.left {
   float: left;
-  border-radius: 100% 34% 20% 70%;
-  clip-path: polygon(4% 77%, 14% 38%, 44% 7%, 100% 0, 100% 31%, 50% 35%, 20% 65%);
 }
 
 .custom .bumper.right {
   float: right;
-  border-radius: 34% 100% 70% 20%;
-  clip-path: polygon(0 0, 56% 7%, 86% 38%, 96% 77%, 80% 65%, 50% 35%, 0 31%);
+  transform: rotateY(180deg);
 }
 
 .custom .bumper.pressed {
+  opacity: 1;
+}
+
+/* The disconnected background has no DOM controls, so retain the template
+ * silhouettes for LT/RT and LB/RB while keeping the rest of the state hidden. */
+.custom.disconnected .triggers,
+.custom.disconnected .bumpers {
+  display: block;
+}
+
+.custom.disconnected .trigger,
+.custom.disconnected .bumper {
   opacity: 1;
 }
 

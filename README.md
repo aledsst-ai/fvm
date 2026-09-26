@@ -43,6 +43,8 @@ O CSS público atualizado continua sendo o mesmo URL acima. Ele mantém a arte e
 │   ├── controller-base.png
 │   ├── controller-base-structure.png
 │   ├── controller-body-disconnected.png
+│   ├── trigger.svg
+│   ├── bumper.svg
 │   ├── stick.png
 │   └── triggers-static.png
 ├── gamepadviewer.css
