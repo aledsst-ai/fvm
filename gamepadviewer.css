@@ -39,7 +39,8 @@ body {
 .custom .triggers {
   position: absolute;
   z-index: 10;
-  top: 0;
+  /* The Webpixum body starts below the shoulder silhouette. */
+  top: -120px;
   left: 132px;
   width: 558px;
   height: 122px;
@@ -65,7 +66,7 @@ body {
 .custom .bumpers {
   position: absolute;
   z-index: 11;
-  top: 47px;
+  top: -14px;
   left: 132px;
   width: 558px;
   height: 63px;
