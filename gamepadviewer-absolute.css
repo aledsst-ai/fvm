@@ -40,17 +40,17 @@ body {
   position: absolute;
   z-index: 12;
   /* The Webpixum body starts below the shoulder silhouette. */
-  top: -110px;
+  top: -133px;
   left: 132px;
   width: 558px;
-  height: 122px;
+  height: 145px;
 }
 
 .custom .trigger {
   width: 89px;
-  height: 122px;
+  height: 145px;
   opacity: 0;
-  background: transparent url("https://aledsst-ai.github.io/fvm/assets/trigger.svg?v=7") center / 89px 122px no-repeat;
+  background: transparent url("https://aledsst-ai.github.io/fvm/assets/trigger.svg?v=8") center / 89px 145px no-repeat;
 }
 
 .custom .trigger.left {
