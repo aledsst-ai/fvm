@@ -1,6 +1,7 @@
 # FVM — Webpixum / XISDE Gamepad Skin
 
 Skin customizada de Xbox para o Gamepad Viewer, criada a partir da arte original em PSD.
+Os analógicos agora usam recortes móveis do PSD e a hierarquia de posicionamento do template padrão, em vez de duplicar um analógico estático do fundo.
 
 ## URLs públicas
 
@@ -32,13 +33,18 @@ Se oferecer apenas um editor para colar CSS, copie o conteúdo de `gamepadviewer
 
 Esta skin depende da estrutura de classes do Gamepad Viewer (`.controller.custom`, `.button.pressed`, `.face.pressed` etc.). Se o MyGamepads usar nomes de elementos diferentes, será necessário adaptar os seletores ao HTML dele; hospedar o arquivo no GitHub, sozinho, não converte o formato.
 
+O CSS público atualizado continua sendo o mesmo URL acima. Ele mantém a arte em 817 × 578 px, mas segue a mesma lógica do template padrão: cada grupo (`.sticks`, `.triggers`, `.bumpers`) é o contêiner e os controles são filhos posicionados dentro dele. Isso é importante para o deslocamento de eixos e estados de pressão.
+
 ## Estrutura
 
 ```text
 .
 ├── assets/
 │   ├── controller-base.png
-│   └── controller-disconnected.png
+│   ├── controller-base-structure.png
+│   ├── controller-body-disconnected.png
+│   ├── stick.png
+│   └── triggers-static.png
 ├── gamepadviewer.css
 ├── gamepadviewer-absolute.css
 └── index.html
