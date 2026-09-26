@@ -17,7 +17,6 @@ body {
 }
 
 .controller.custom {
-  position: relative;
   width: 817px;
   height: 578px;
   background: transparent url("./assets/controller-base.png?v=2") center / 817px 578px no-repeat;
