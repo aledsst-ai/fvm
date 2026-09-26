@@ -45,8 +45,8 @@ body {
 .custom .triggers {
   position: absolute;
   z-index: 10;
-  /* Both LT/RT silhouettes stay inside the standard canvas. */
-  top: 0;
+  /* LT/RT sit just below the higher LB/RB shoulder buttons. */
+  top: 18px;
   left: 90px;
   width: 637px;
   height: 90px;
