@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" width="171" height="110" viewBox="0 0 171 110">
+<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" width="171" height="90" viewBox="0 0 171 90">
   <defs>
     <style>
       .trigger-fill {
@@ -12,6 +12,7 @@
     </linearGradient>
   </defs>
   <g id="LT_Pressed" data-name="LT Pressed">
-    <path class="trigger-fill" d="M8,104C14,83,17,60,24,42C32,21,49,7,73,4C96,1,124,4,145,14C159,21,167,31,169,43C171,55,167,71,163,88C160,100,159,105,158,109C126,99,99,91,76,88C52,85,29,91,8,104Z"/>
+    <path class="trigger-fill" d="M8,86C14,66,17,45,25,29C34,11,55,3,76,2C99,1,126,7,146,19C159,27,167,37,169,47C170,55,166,62,160,65C145,65,127,62,109,62C89,62,69,66,52,72C35,76,20,82,8,86Z"/>
+    <path d="M9,85C25,75,42,68,59,63C81,56,105,54,128,56C142,57,153,59,160,61" fill="none" stroke="#d1d5da" stroke-width="2.5" stroke-linecap="round" opacity="0.82"/>
   </g>
 </svg>

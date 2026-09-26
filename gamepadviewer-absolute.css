@@ -44,19 +44,19 @@ body {
 /* Analog triggers. Their opacity is driven by Gamepad Viewer. */
 .custom .triggers {
   position: absolute;
-  z-index: 12;
+  z-index: 10;
   /* Both LT/RT silhouettes stay inside the standard canvas. */
   top: 0;
   left: 90px;
   width: 637px;
-  height: 110px;
+  height: 90px;
 }
 
 .custom .trigger {
   width: 171px;
-  height: 110px;
+  height: 90px;
   opacity: 0;
-  background: transparent url("https://aledsst-ai.github.io/fvm/assets/trigger.svg?v=11") center / 171px 110px no-repeat;
+  background: transparent url("https://aledsst-ai.github.io/fvm/assets/trigger.svg?v=12") center / 171px 90px no-repeat;
 }
 
 .custom .trigger.left {
@@ -71,7 +71,7 @@ body {
 /* LB / RB */
 .custom .bumpers {
   position: absolute;
-  z-index: 11;
+  z-index: 13;
   top: 0;
   left: 132px;
   width: 558px;
