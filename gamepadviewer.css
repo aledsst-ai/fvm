@@ -324,18 +324,18 @@ body {
  * complete 711px canvas instead of clipping its upper shoulder area. */
 @media (max-height: 710px) {
   .controller.custom {
-    transform: translate(-50%, -50%) scale(0.8) !important;
+    transform: translate(-40%, -40%) scale(0.8) !important;
   }
 }
 
 @media (max-height: 550px) {
   .controller.custom {
-    transform: translate(-50%, -50%) scale(0.7) !important;
+    transform: translate(-35%, -35%) scale(0.7) !important;
   }
 }
 
 @media (max-height: 480px) {
   .controller.custom {
-    transform: translate(-50%, -50%) scale(0.6) !important;
+    transform: translate(-30%, -30%) scale(0.6) !important;
   }
 }
