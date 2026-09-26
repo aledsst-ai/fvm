@@ -38,7 +38,7 @@ body {
 /* Analog triggers. Their opacity is driven by Gamepad Viewer. */
 .custom .triggers {
   position: absolute;
-  z-index: 10;
+  z-index: 12;
   /* The Webpixum body starts below the shoulder silhouette. */
   top: -110px;
   left: 132px;
@@ -66,7 +66,7 @@ body {
 .custom .bumpers {
   position: absolute;
   z-index: 11;
-  top: 10px;
+  top: 0;
   left: 132px;
   width: 558px;
   height: 63px;
