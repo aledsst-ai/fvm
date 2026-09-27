@@ -1,7 +1,7 @@
 # FVM — Webpixum / XISDE Gamepad Skin
 
-Skin customizada de Xbox para o Gamepad Viewer, criada a partir da arte original em PSD.
-Os analógicos agora usam recortes móveis do PSD e a hierarquia de posicionamento do template padrão, em vez de duplicar um analógico estático do fundo.
+Skin customizada de Xbox para o Gamepad Viewer, criada a partir da arte original em PSD e reconstruída sobre a geometria do CSS S-Gaming fornecido como referência.
+Base, controles e ombros foram separados: o PSD fornece a identidade visual, enquanto o segundo CSS fornece as posições e os estados de interação.
 
 ## URLs públicas
 
@@ -19,7 +19,7 @@ Use o CSS como uma skin completa, pelo parâmetro `css=`:
 https://gamepadviewer.com/?p=1&css=https%3A%2F%2Faledsst-ai.github.io%2Ffvm%2Fgamepadviewer.css
 ```
 
-Tamanho recomendado para a Fonte do navegador no OBS: **817 × 578 px**. Os gatilhos LT/RT ficam dentro desse canvas padrão, sem depender de altura extra.
+Tamanho recomendado para a Fonte do navegador no OBS: **784 × 558 px**. LT/RT e LB/RB ficam integralmente dentro desse canvas e não dependem de escala ou altura extra.
 
 ## MyGamepads
 
@@ -33,7 +33,19 @@ Se oferecer apenas um editor para colar CSS, copie o conteúdo de `gamepadviewer
 
 Esta skin depende da estrutura de classes do Gamepad Viewer (`.controller.custom`, `.button.pressed`, `.face.pressed` etc.). Se o MyGamepads usar nomes de elementos diferentes, será necessário adaptar os seletores ao HTML dele; hospedar o arquivo no GitHub, sozinho, não converte o formato.
 
-O CSS público atualizado continua sendo o mesmo URL acima. O canvas permanece em 817 × 578 px. A organização dos ombros segue o CSS de referência: LT/RT ficam no grupo superior `.triggers`, enquanto LB/RB ficam no grupo `.bumpers` logo abaixo. A implementação mantém a lógica padrão do GamePad Viewer, com estados analógicos e pressionados separados.
+O CSS público atualizado continua sendo o mesmo URL acima. O canvas agora segue o segundo modelo: **784 × 558 px**. LT/RT usam `.triggers`; LB/RB usam `.bumpers`; todos os estados continuam independentes e compatíveis com a estrutura padrão do GamePad Viewer.
+
+## Mapa da migração
+
+| Peça | Origem visual | Geometria/estado no novo modelo |
+|---|---|---|
+| Carcaça, grips e painel | grupos `Design` e `Texture` do PSD | base 784 × 558 do CSS S-Gaming |
+| LT / RT | camada `Triger Buttons` e paleta azul do PSD | `.triggers`, silhuetas individuais do segundo CSS |
+| LB / RB | camada `Triger Buttons` e paleta azul do PSD | `.bumpers`, silhuetas individuais do segundo CSS |
+| A / B / X / Y | camadas `A`, `B`, `X`, `Y` e `Buttons` | coordenadas do bloco `.abxy` do segundo CSS |
+| Analógicos | camadas `Knobs` e `Joy Stick Bottom` | bloco `.sticks` do segundo CSS |
+| Direcional | camada `D Pad` | bloco `.dpad` do segundo CSS |
+| View / Menu e logo | camadas centrais do PSD | centro e indicador do segundo CSS |
 
 ## Estrutura
 
@@ -43,12 +55,11 @@ O CSS público atualizado continua sendo o mesmo URL acima. O canvas permanece e
 │   ├── controller-base.png
 │   ├── controller-base-structure.png
 │   ├── controller-body-disconnected.png
-│   ├── reference-trigger.png
-│   ├── reference-bumper.png
-│   ├── trigger.svg
-│   ├── bumper.svg
-│   ├── stick.png
-│   └── triggers-static.png
+│   ├── controller-reference-base.png
+│   ├── controller-reference-disconnected.png
+│   ├── webpixum-trigger.png
+│   ├── webpixum-bumper.png
+│   └── webpixum-stick.png
 ├── gamepadviewer.css
 ├── gamepadviewer-absolute.css
 └── index.html
