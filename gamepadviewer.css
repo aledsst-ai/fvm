@@ -45,8 +45,8 @@ body {
 .custom .triggers {
   position: absolute;
   z-index: 10;
-  /* LT/RT sit only slightly below the higher LB/RB shoulder buttons. */
-  top: 12px;
+  /* LT/RT raised 30px while leaving the higher LB/RB shoulder buttons fixed. */
+  top: -18px;
   left: 90px;
   width: 637px;
   height: 90px;
