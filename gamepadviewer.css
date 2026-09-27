@@ -43,7 +43,8 @@ body {
   box-sizing: border-box;
 }
 
-/* Analog triggers. Their opacity is driven by Gamepad Viewer. */
+/* Keep the LT/RT hooks for input state, but do not render a separate
+ * trigger shape. LT/RT reuse the LB/RB artwork below. */
 .custom .triggers {
   position: absolute;
   z-index: -1;
@@ -55,6 +56,7 @@ body {
 }
 
 .custom .trigger {
+  display: none;
   width: 171px;
   height: 90px;
   opacity: 0;
@@ -101,6 +103,13 @@ body {
 }
 
 .custom .bumper.pressed {
+  opacity: 1;
+}
+
+/* LT/RT reuse the corresponding LB/RB visual when their trigger state is
+ * reported as pressed. */
+.custom:has(.trigger.left.pressed) .bumper.left,
+.custom:has(.trigger.right.pressed) .bumper.right {
   opacity: 1;
 }
 
