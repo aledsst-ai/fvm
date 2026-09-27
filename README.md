@@ -11,6 +11,12 @@ Após a publicação do GitHub Pages:
 - CSS com imagens absolutas, indicado para copiar e colar: `https://aledsst-ai.github.io/fvm/gamepadviewer-absolute.css`
 - Prévia: `https://aledsst-ai.github.io/fvm/`
 
+## Versões preservadas
+
+- `1065e25-rear`: `https://aledsst-ai.github.io/fvm/versions/1065e25-rear/gamepadviewer-absolute.css`
+
+Os arquivos dentro de `versions/` incluem seus próprios assets e não são sobrescritos quando a skin principal é atualizada.
+
 ## Gamepad Viewer
 
 Use o CSS como uma skin completa, pelo parâmetro `css=`:
