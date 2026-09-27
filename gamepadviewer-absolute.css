@@ -61,10 +61,14 @@ body {
 
 .custom .trigger.left {
   float: left;
+  position: relative;
+  left: 10px;
 }
 
 .custom .trigger.right {
   float: right;
+  position: relative;
+  right: 10px;
   transform: rotateY(180deg);
 }
 
