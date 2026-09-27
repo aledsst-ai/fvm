@@ -43,6 +43,8 @@ O CSS público atualizado continua sendo o mesmo URL acima. O canvas permanece e
 │   ├── controller-base.png
 │   ├── controller-base-structure.png
 │   ├── controller-body-disconnected.png
+│   ├── reference-trigger.png
+│   ├── reference-bumper.png
 │   ├── trigger.svg
 │   ├── bumper.svg
 │   ├── stick.png

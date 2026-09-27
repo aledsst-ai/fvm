@@ -51,15 +51,15 @@ body {
   top: 0;
   left: 90px;
   width: 637px;
-  height: 90px;
+  height: 122px;
 }
 
 .custom .trigger {
   display: block;
-  width: 171px;
-  height: 90px;
+  width: 89px;
+  height: 122px;
   opacity: 0;
-  background: transparent url("https://aledsst-ai.github.io/fvm/assets/trigger.svg?v=12") center / 171px 90px no-repeat;
+  background: transparent url("https://aledsst-ai.github.io/fvm/assets/reference-trigger.png?v=1") center / 89px 122px no-repeat;
 }
 
 .custom .trigger.left {
@@ -86,10 +86,10 @@ body {
 }
 
 .custom .bumper {
-  width: 171px;
+  width: 172px;
   height: 63px;
   opacity: 0;
-  background: transparent url("https://aledsst-ai.github.io/fvm/assets/bumper.svg?v=1") center / 171px 63px no-repeat;
+  background: transparent url("https://aledsst-ai.github.io/fvm/assets/reference-bumper.png?v=1") center / 172px 63px no-repeat;
 }
 
 .custom .bumper.left {
