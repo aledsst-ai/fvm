@@ -56,7 +56,11 @@ body,
   position: absolute;
   opacity: 0;
   pointer-events: auto;
-  transition: opacity 70ms linear, filter 70ms linear;
+  transform-origin: 50% 92%;
+  transition:
+    opacity 70ms linear,
+    filter 130ms ease,
+    transform 130ms cubic-bezier(0.2, 0.75, 0.25, 1);
 }
 
 .custom .trigger.left {
@@ -76,7 +80,12 @@ body,
 }
 
 .custom .trigger.pressed {
-  filter: brightness(1.08) drop-shadow(0 0 7px rgba(0, 174, 243, 0.7));
+  filter:
+    brightness(0.9)
+    saturate(1.12)
+    drop-shadow(0 2px 1px rgba(7, 56, 121, 0.68))
+    drop-shadow(0 0 9px rgba(0, 174, 243, 0.7));
+  transform: translateY(4px) scaleY(0.96);
 }
 
 /* LB / RB: the matching shoulder sections from the PSD's Top layer. */
@@ -260,7 +269,11 @@ body,
   position: absolute;
   opacity: 1;
   pointer-events: auto;
-  transition: filter 55ms linear;
+  border-radius: 50%;
+  background-position: center;
+  background-size: 100% 100%;
+  filter: drop-shadow(0 1px 1.5px rgba(7, 30, 58, 0.32));
+  transition: filter 100ms ease;
 }
 
 .custom .stick.left {
@@ -268,19 +281,22 @@ body,
   left: 134.35px;
   width: 108px;
   height: 115px;
-  background: transparent url("./assets/v2-stick-left.png") 0 0 / 108px 115px no-repeat;
+  background: transparent url("./assets/v2-stick-left.png") 0 0 / 100% 100% no-repeat;
 }
 
 .custom .stick.right {
   top: 302.76px;
   left: 446.7px;
-  width: 109px;
-  height: 117px;
-  background: transparent url("./assets/v2-stick-right.png") 0 0 / 109px 117px no-repeat;
+  width: 108px;
+  height: 115px;
+  background: transparent url("./assets/v2-stick-right.png") 0 0 / 100% 100% no-repeat;
 }
 
 .custom .stick.pressed {
-  filter: brightness(1.12) drop-shadow(0 0 8px rgba(0, 174, 243, 0.74));
+  filter:
+    brightness(1.05)
+    saturate(1.05)
+    drop-shadow(0 0 5px rgba(0, 174, 243, 0.5));
 }
 
 /* D-pad: the cross is extracted; directional faces add a pressed-state glow. */
