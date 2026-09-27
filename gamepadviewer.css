@@ -108,8 +108,8 @@ body {
 
 /* LT/RT reuse the corresponding LB/RB visual when their trigger state is
  * reported as pressed. */
-.custom:has(.trigger.left.pressed) .bumper.left,
-.custom:has(.trigger.right.pressed) .bumper.right {
+.custom:has(.trigger-button.left.pressed) .bumper.left,
+.custom:has(.trigger-button.right.pressed) .bumper.right {
   opacity: 1;
 }
 
