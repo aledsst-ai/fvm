@@ -25,6 +25,8 @@ body {
   width: 817px;
   height: 578px;
   overflow: visible !important;
+  /* Keep the trigger layer behind the controller artwork. */
+  z-index: 0;
   background: transparent url("./assets/controller-base-structure.png?v=4") center / 817px 578px no-repeat;
   filter: drop-shadow(0 16px 18px rgba(0, 38, 83, 0.24));
 }
@@ -44,7 +46,7 @@ body {
 /* Analog triggers. Their opacity is driven by Gamepad Viewer. */
 .custom .triggers {
   position: absolute;
-  z-index: 10;
+  z-index: -1;
   /* LT/RT raised 30px while leaving the higher LB/RB shoulder buttons fixed. */
   top: -18px;
   left: 90px;
