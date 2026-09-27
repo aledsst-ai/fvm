@@ -19,7 +19,6 @@ body,
 }
 
 .controller.custom {
-  position: relative;
   width: 784px;
   height: 658px;
   overflow: visible !important;
