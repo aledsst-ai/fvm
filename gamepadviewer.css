@@ -25,7 +25,7 @@ body {
   width: 817px;
   height: 578px;
   overflow: visible !important;
-  /* Keep the trigger layer behind the controller artwork. */
+  /* Keep the skin in its own stacking context. */
   z-index: 0;
   background: transparent url("./assets/controller-base-structure.png?v=4") center / 817px 578px no-repeat;
   filter: drop-shadow(0 16px 18px rgba(0, 38, 83, 0.24));
@@ -43,20 +43,19 @@ body {
   box-sizing: border-box;
 }
 
-/* Keep the LT/RT hooks for input state, but do not render a separate
- * trigger shape. LT/RT reuse the LB/RB artwork below. */
+/* LT / RT — independent analog trigger artwork, following the reference
+ * skin's standard GamePad Viewer group structure. */
 .custom .triggers {
   position: absolute;
-  z-index: -1;
-  /* LT/RT raised 30px while leaving the higher LB/RB shoulder buttons fixed. */
-  top: -18px;
+  z-index: 10;
+  top: 0;
   left: 90px;
   width: 637px;
   height: 90px;
 }
 
 .custom .trigger {
-  display: none;
+  display: block;
   width: 171px;
   height: 90px;
   opacity: 0;
@@ -80,7 +79,7 @@ body {
 .custom .bumpers {
   position: absolute;
   z-index: 13;
-  top: 0;
+  top: 72px;
   left: 132px;
   width: 558px;
   height: 63px;
@@ -103,13 +102,6 @@ body {
 }
 
 .custom .bumper.pressed {
-  opacity: 1;
-}
-
-/* LT/RT reuse the corresponding LB/RB visual when their trigger state is
- * reported as pressed. */
-.custom:has(.trigger-button.left.pressed) .bumper.left,
-.custom:has(.trigger-button.right.pressed) .bumper.right {
   opacity: 1;
 }
 

@@ -33,7 +33,7 @@ Se oferecer apenas um editor para colar CSS, copie o conteúdo de `gamepadviewer
 
 Esta skin depende da estrutura de classes do Gamepad Viewer (`.controller.custom`, `.button.pressed`, `.face.pressed` etc.). Se o MyGamepads usar nomes de elementos diferentes, será necessário adaptar os seletores ao HTML dele; hospedar o arquivo no GitHub, sozinho, não converte o formato.
 
-O CSS público atualizado continua sendo o mesmo URL acima. O canvas permanece em 817 × 578 px. LT/RT mantêm seus hooks de estado, mas não exibem uma arte própria: quando acionados, reutilizam visualmente os elementos correspondentes de LB/RB. A implementação segue a mesma lógica do template padrão: cada grupo (`.sticks`, `.triggers`, `.bumpers`) é o contêiner e os controles são filhos posicionados dentro dele.
+O CSS público atualizado continua sendo o mesmo URL acima. O canvas permanece em 817 × 578 px. A organização dos ombros segue o CSS de referência: LT/RT ficam no grupo superior `.triggers`, enquanto LB/RB ficam no grupo `.bumpers` logo abaixo. A implementação mantém a lógica padrão do GamePad Viewer, com estados analógicos e pressionados separados.
 
 ## Estrutura
 
