@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Prévia — Webpixum Gamepad Viewer</title>
-  <link rel="stylesheet" href="./gamepadviewer.css?v=polished-analog-trigger-20260927a">
+  <link rel="stylesheet" href="./gamepadviewer.css?v=gist-opacity-trigger-20260927a">
   <style>
     html, body { min-height: 100%; overflow: auto; }
     body { margin: 0; display: grid; place-items: center; background: #087bb7 !important; font-family: system-ui, sans-serif; color: white; }
@@ -16,7 +16,7 @@
 </head>
 <body>
   <main>
-    <p>Clique nos controles; LT/RT alternam 35%, 70%, 100% e 0% de pressão.</p>
+    <p>Clique nos controles para simular estados; teste a pressão gradual de LT/RT no GamePad Viewer com o controle conectado.</p>
     <div class="controller custom">
       <div class="triggers">
         <div class="trigger left" data-control></div>
@@ -50,22 +50,13 @@
     </div>
   </main>
   <script>
-    const triggerPressureSteps = [0.35, 0.7, 1, 0];
-
     document.querySelectorAll('[data-control]').forEach((control) => {
       control.addEventListener('click', () => {
-        if (control.classList.contains('trigger')) {
-          const currentStep = Number(control.dataset.pressureStep ?? -1);
-          const nextStep = (currentStep + 1) % triggerPressureSteps.length;
-          const pressure = triggerPressureSteps[nextStep];
-
-          control.dataset.pressureStep = String(nextStep);
-          control.style.opacity = String(pressure);
-          control.classList.toggle('pressed', pressure > 0);
-          return;
-        }
-
         control.classList.toggle('pressed');
+
+        if (control.classList.contains('trigger')) {
+          control.style.opacity = control.classList.contains('pressed') ? '1' : '0';
+        }
       });
     });
   </script>
