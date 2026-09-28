@@ -263,22 +263,22 @@ body,
   content: "";
   position: absolute;
   z-index: 0;
-  width: 124px;
-  height: 124px;
+  width: 114px;
+  height: 114px;
   border-radius: 50%;
-  background: radial-gradient(circle at 50% 48%, #071b33 0 57%, #0e4373 68%, #007dc6 84%, #06315a 100%);
-  box-shadow: inset 0 2px 5px rgba(0, 0, 0, .45), 0 1px 2px rgba(0, 0, 0, .3);
+  background: radial-gradient(circle at 50% 50%, #14385d 0 68%, #0a315b 85%, #0876bf 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, .3);
   pointer-events: none;
 }
 
 .custom .sticks::before {
-  top: 176.87px;
-  left: 126.35px;
+  top: 181.87px;
+  left: 131.35px;
 }
 
 .custom .sticks::after {
-  top: 298.26px;
-  left: 438.7px;
+  top: 303.26px;
+  left: 443.7px;
 }
 
 .custom .stick {
