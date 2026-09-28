@@ -258,8 +258,8 @@ body,
   pointer-events: none;
 }
 
-/* The sockets remain visible when the thumb caps travel. A smooth recess
-   covers the rough dark PSD marks beneath the new caps. */
+/* The fixed gimbal beneath each moving cap: dark pivot, raised blue collar,
+   then a narrow outer lip. It also covers the rough PSD socket marks. */
 .custom .sticks::before,
 .custom .sticks::after {
   content: "";
@@ -268,8 +268,10 @@ body,
   width: 114px;
   height: 114px;
   border-radius: 50%;
-  background: radial-gradient(circle at 50% 50%, #14385d 0 68%, #0a315b 85%, #0876bf 100%);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, .3);
+  background:
+    radial-gradient(circle at 43% 34%, rgba(156, 231, 255, .28), transparent 38%),
+    radial-gradient(circle at 50% 50%, #071c32 0 41%, #1b5b82 49%, #0b2d50 58%, #0a4f7c 72%, #0985c8 79%, #062947 91%);
+  box-shadow: inset 0 2px 5px rgba(0, 6, 25, .58), 0 1px 2px rgba(0, 16, 38, .28);
   pointer-events: none;
 }
 
