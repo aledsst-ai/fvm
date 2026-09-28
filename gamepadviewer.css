@@ -15,7 +15,7 @@ html,
 body,
 #gamepads {
   background: transparent !important;
-  overflow: visible !important;
+  overflow: hidden !important;
 }
 
 .controller.custom {
