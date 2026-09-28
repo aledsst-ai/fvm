@@ -246,18 +246,20 @@ body,
   transform: translateY(2px) scale(0.95);
 }
 
-/* Analog sticks: both caps are cut from their own layered PSD artwork. */
+/* Analog sticks: layered, clean caps tilt with GamePad Viewer's native
+   rotateX/rotateY, instead of rotating a flat pre-shaded PNG. */
 .custom .sticks {
   position: absolute;
   inset: 0;
   z-index: 17;
   width: 784px;
   height: 658px;
+  perspective: 720px;
   pointer-events: none;
 }
 
 /* The sockets remain visible when the thumb caps travel. A smooth recess
-   covers the rough dark PSD marks without changing the moving cap artwork. */
+   covers the rough dark PSD marks beneath the new caps. */
 .custom .sticks::before,
 .custom .sticks::after {
   content: "";
@@ -287,10 +289,22 @@ body,
   opacity: 1;
   pointer-events: auto;
   border-radius: 50%;
-  background-position: center;
-  background-size: 100% 100%;
-  filter: drop-shadow(0 1px 1.5px rgba(7, 30, 58, 0.32));
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  background: linear-gradient(180deg, #e4f9ff 0%, #a6e5ff 35%, #1ab1f0 67%, #027ccb 86%, #064a91 100%);
+  box-shadow: 0 2px 3px rgba(0, 27, 64, .32), inset 0 1px 2px rgba(255, 255, 255, .82);
   transition: filter 100ms ease;
+}
+
+.custom .stick::before {
+  content: "";
+  position: absolute;
+  inset: 4px 5px 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 43% 30%, #fff 0 55%, #f8fdff 75%, #d9f2ff 100%);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, .95), inset 0 -2px 3px rgba(15, 107, 166, .12);
+  transform: translateZ(4px);
+  backface-visibility: hidden;
 }
 
 .custom .stick.left {
@@ -298,7 +312,6 @@ body,
   left: 134.35px;
   width: 108px;
   height: 115px;
-  background: transparent url("./assets/v2-stick-left.png") 0 0 / 100% 100% no-repeat;
 }
 
 .custom .stick.right {
@@ -306,7 +319,6 @@ body,
   left: 446.7px;
   width: 108px;
   height: 115px;
-  background: transparent url("./assets/v2-stick-right.png") 0 0 / 100% 100% no-repeat;
 }
 
 .custom .stick.pressed {
