@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Prévia — Webpixum Gamepad Viewer</title>
-  <link rel="stylesheet" href="./gamepadviewer.css?v=gist-opacity-trigger-20260927a">
+  <link rel="stylesheet" href="./gamepadviewer.css?v=trigger-mask-stick-sockets-20260927a">
   <style>
     html, body { min-height: 100%; overflow: auto; }
     body { margin: 0; display: grid; place-items: center; background: #087bb7 !important; font-family: system-ui, sans-serif; color: white; }
@@ -12,11 +12,13 @@
     p { margin: 0; padding: 6px 12px; border-radius: 999px; background: rgba(0, 28, 69, .72); font-size: 14px; line-height: 1.2; }
     .controller.custom { position: relative; margin: 0; }
     .controller.custom [data-control] { cursor: pointer; }
+    .controller.custom .stick { touch-action: none; cursor: grab; }
+    .controller.custom .stick:active { cursor: grabbing; }
   </style>
 </head>
 <body>
   <main>
-    <p>Clique nos controles para simular estados; teste a pressão gradual de LT/RT no GamePad Viewer com o controle conectado.</p>
+    <p>Clique nos botões e arraste os analógicos; teste a pressão gradual de LT/RT no GamePad Viewer com o controle conectado.</p>
     <div class="controller custom">
       <div class="triggers">
         <div class="trigger left" data-control></div>
@@ -50,6 +52,21 @@
     </div>
   </main>
   <script>
+    document.querySelectorAll('.stick[data-control]').forEach((stick) => {
+      let origin;
+      stick.addEventListener('pointerdown', (event) => {
+        origin = { x: event.clientX, y: event.clientY };
+        stick.setPointerCapture(event.pointerId);
+      });
+      stick.addEventListener('pointermove', (event) => {
+        if (!origin) return;
+        const x = Math.max(-25, Math.min(25, event.clientX - origin.x));
+        const y = Math.max(-25, Math.min(25, event.clientY - origin.y));
+        stick.style.transform = `translate(${x}px, ${y}px)`;
+      });
+      stick.addEventListener('pointerup', () => { origin = undefined; });
+      stick.addEventListener('pointercancel', () => { origin = undefined; });
+    });
     document.querySelectorAll('[data-control]').forEach((control) => {
       control.addEventListener('click', () => {
         control.classList.toggle('pressed');

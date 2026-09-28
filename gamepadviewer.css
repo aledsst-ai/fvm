@@ -38,7 +38,8 @@ body,
   box-sizing: border-box;
 }
 
-/* LT / RT: preserve GamePad Viewer's native analog opacity response. */
+/* LT / RT: the PSD silhouette is the mask; native analog opacity reveals blue
+   over the white resting pieces already present in the controller artwork. */
 .custom .triggers,
 .custom .bumpers {
   position: absolute;
@@ -57,6 +58,7 @@ body,
   opacity: 0;
   pointer-events: auto;
   transition: opacity 70ms linear;
+  background: linear-gradient(180deg, #aee9ff 0%, #37b9f4 43%, #0876ca 100%);
 }
 
 .custom .trigger.left {
@@ -64,7 +66,8 @@ body,
   left: 127.63px;
   width: 92px;
   height: 126px;
-  background: transparent url("./assets/v2-trigger-left.png") 0 0 / 92px 126px no-repeat;
+  -webkit-mask: url("./assets/v2-trigger-left.png") 0 0 / 92px 126px no-repeat;
+  mask: url("./assets/v2-trigger-left.png") 0 0 / 92px 126px no-repeat;
 }
 
 .custom .trigger.right {
@@ -72,7 +75,8 @@ body,
   left: 559.45px;
   width: 95px;
   height: 125px;
-  background: transparent url("./assets/v2-trigger-right.png") 0 0 / 95px 125px no-repeat;
+  -webkit-mask: url("./assets/v2-trigger-right.png") 0 0 / 95px 125px no-repeat;
+  mask: url("./assets/v2-trigger-right.png") 0 0 / 95px 125px no-repeat;
 }
 
 /* LB / RB: the matching shoulder sections from the PSD's Top layer. */
@@ -252,8 +256,34 @@ body,
   pointer-events: none;
 }
 
+/* The sockets remain visible when the thumb caps travel. A smooth recess
+   covers the rough dark PSD marks without changing the moving cap artwork. */
+.custom .sticks::before,
+.custom .sticks::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: 124px;
+  height: 124px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 48%, #071b33 0 57%, #0e4373 68%, #007dc6 84%, #06315a 100%);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, .45), 0 1px 2px rgba(0, 0, 0, .3);
+  pointer-events: none;
+}
+
+.custom .sticks::before {
+  top: 176.87px;
+  left: 126.35px;
+}
+
+.custom .sticks::after {
+  top: 298.26px;
+  left: 438.7px;
+}
+
 .custom .stick {
   position: absolute;
+  z-index: 1;
   opacity: 1;
   pointer-events: auto;
   border-radius: 50%;
